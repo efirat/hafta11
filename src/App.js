@@ -1,8 +1,17 @@
+import { useState } from "react";
+import C1 from "./bilesenler/C1";
+import GlobalContext from "./contexts/GlobalContext";
+
 function App() {
+  const [kullanici, kullaniciGuncelle] = useState("Orhan Gencebay");
+
   return (
-    <div>
-      App
-    </div>
+    <GlobalContext.Provider value={kullanici}>
+      <div>
+        <p>App</p>
+        <C1 />
+      </div>
+    </GlobalContext.Provider>
   );
 }
 
